@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TravelTech Solutions</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <h1>TravelTech Solutions</h1>
+    <p>Cerca països i gestiona els teus viatges</p>
+  </header>
+
+  <main>
+
+    <!-- CERCA DE PAÏSOS -->
+    <section class="box">
+      <h2>Cercar un país</h2>
+
+      <input 
+        type="text" 
+        id="countryInput" 
+        placeholder="Escriu el nom d'un país..."
+      >
+
+      <button id="searchBtn">Cercar</button>
+
+      <div id="result"></div>
+    </section>
+
+    <!-- COMENTARIS -->
+    <section class="box">
+      <h2>Afegir comentari</h2>
+
+      <input 
+        type="text" 
+        id="commentInput" 
+        placeholder="Escriu un comentari..."
+      >
+
+      <button id="commentBtn">Guardar comentari</button>
+    </section>
+
+    <!-- FAVORITS -->
+    <section class="box">
+      <h2>Països Favorits</h2>
+
+      <button onclick="loadFavorites()">
+        Carregar favorits
+      </button>
+
+      <ul id="favoritesList"></ul>
+    </section>
+
+    <!-- COMENTARIS GUARDATS -->
+    <section class="box">
+      <h2>Comentaris Guardats</h2>
+
+      <button onclick="loadComments()">
+        Carregar comentaris
+      </button>
+
+      <ul id="commentsList"></ul>
+    </section>
+
+    <!-- VISITATS -->
+    <section class="box">
+      <h2>Països Visitats</h2>
+
+      <button onclick="loadVisited()">
+        Carregar visitats
+      </button>
+
+      <ul id="visitedList"></ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Projecte TravelTech Solutions - Arquitectura Microserveis</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
