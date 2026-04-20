@@ -16,9 +16,9 @@ let currentCountry = "";
   canvia aquestes URLs per les públiques de Render / Railway / Koyeb
 */
 
-const FAVORITES_URL = "http://localhost:3001/favorites";
-const COMMENTS_URL = "http://localhost:3002/comments";
-const VISITED_URL = "http://localhost:3003/visited";
+const FAVORITES_URL = "https://favorites-service-kxho.onrender.com/favorites";
+const COMMENTS_URL = "https://comments-service-oqa7.onrender.com/comments";
+const VISITED_URL = "https://visited-service-d4mz.onrender.com/visited";
 
 searchBtn.addEventListener("click", searchCountry);
 commentBtn.addEventListener("click", addComment);
