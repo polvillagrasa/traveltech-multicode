@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 
 const app = express();
+
 app.use(cors());
 app.use(express.json());
 
@@ -13,8 +14,12 @@ app.get("/comments", (req, res) => {
 
 app.get("/comments/:country", (req, res) => {
   const country = req.params.country.toLowerCase();
-  const filtered = comments.filter(item => item.country.toLowerCase() === country);
-  res.json(filtered);
+
+  const filteredComments = comments.filter(
+    item => item.country.toLowerCase() === country
+  );
+
+  res.json(filteredComments);
 });
 
 app.post("/comments", (req, res) => {

@@ -2,6 +2,7 @@ const express = require("express");
 const cors = require("cors");
 
 const app = express();
+
 app.use(cors());
 app.use(express.json());
 
@@ -25,13 +26,17 @@ app.post("/favorites", (req, res) => {
   }
 
   favorites.push({ name, capital });
-  res.status(201).json({ message: "País afegit a favorits" });
+  res.status(201).json({ message: "Afegit a favorits" });
 });
 
 app.delete("/favorites/:name", (req, res) => {
   const name = req.params.name;
-  favorites = favorites.filter(item => item.name.toLowerCase() !== name.toLowerCase());
-  res.json({ message: "País eliminat de favorits" });
+
+  favorites = favorites.filter(
+    item => item.name.toLowerCase() !== name.toLowerCase()
+  );
+
+  res.json({ message: "Eliminat de favorits" });
 });
 
 const PORT = process.env.PORT || 3001;

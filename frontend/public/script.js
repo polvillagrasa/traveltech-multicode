@@ -6,8 +6,16 @@ const commentBtn = document.getElementById("commentBtn");
 
 let currentCountry = "";
 
-// DE MOMENT deixa localhost.
-// Després, quan despleguem els serveis, ho canviarem per URLs públiques.
+/*
+  EN LOCAL:
+  const FAVORITES_URL = "http://localhost:3001/favorites";
+  const COMMENTS_URL = "http://localhost:3002/comments";
+  const VISITED_URL = "http://localhost:3003/visited";
+
+  EN PRODUCCIÓ:
+  canvia aquestes URLs per les públiques de Render / Railway / Koyeb
+*/
+
 const FAVORITES_URL = "http://localhost:3001/favorites";
 const COMMENTS_URL = "http://localhost:3002/comments";
 const VISITED_URL = "http://localhost:3003/visited";
