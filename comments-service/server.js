@@ -8,18 +8,12 @@ app.use(express.json());
 
 let comments = [];
 
-app.get("/comments", (req, res) => {
-  res.json(comments);
+app.get("/", (req, res) => {
+  res.send("Comments service working");
 });
 
-app.get("/comments/:country", (req, res) => {
-  const country = req.params.country.toLowerCase();
-
-  const filteredComments = comments.filter(
-    item => item.country.toLowerCase() === country
-  );
-
-  res.json(filteredComments);
+app.get("/comments", (req, res) => {
+  res.json(comments);
 });
 
 app.post("/comments", (req, res) => {
@@ -30,7 +24,27 @@ app.post("/comments", (req, res) => {
   }
 
   comments.push({ country, comment });
-  res.status(201).json({ message: "Comentari guardat" });
+
+  res.status(201).json({
+    message: "Comentari guardat"
+  });
+});
+
+/* BORRAR COMENTARI PER INDEX */
+app.delete("/comments/:id", (req, res) => {
+  const id = parseInt(req.params.id);
+
+  if (isNaN(id) || id < 0 || id >= comments.length) {
+    return res.status(404).json({
+      message: "Comentari no trobat"
+    });
+  }
+
+  comments.splice(id, 1);
+
+  res.json({
+    message: "Comentari eliminat"
+  });
 });
 
 const PORT = process.env.PORT || 3002;
