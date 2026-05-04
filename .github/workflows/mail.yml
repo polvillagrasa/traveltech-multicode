@@ -1,0 +1,30 @@
+name: CI - Testing Node.js
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Descarrega el codi
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # 2. Configura Node.js
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      # 3. Instal·la dependències
+      - name: Install dependencies
+        run: npm install
+
+      # 4. Executa tests
+      - name: Run tests
+        run: npm test
